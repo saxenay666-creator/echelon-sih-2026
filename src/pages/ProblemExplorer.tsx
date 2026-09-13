@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Problem, ProblemStatus, Severity } from '../types';
+import { Problem, ProblemStatus } from '../types';
 import { ProblemCard } from '../components/ProblemCard';
 import { Search, Plus, RotateCcw } from 'lucide-react';
 import { DISTRICTS, CATEGORIES } from '../data/mockData';

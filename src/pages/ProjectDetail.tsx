@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Idea } from '../types';
-import { ArrowLeft, CheckCircle, Send, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Send, MessageSquare } from 'lucide-react';
 
 interface ProjectDetailProps {
   ideaId: string;

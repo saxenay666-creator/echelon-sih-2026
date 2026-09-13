@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Problem, ProblemStatus } from '../types';
-import { STATUS_CLASSES } from '../components/ProblemCard';
-import { Search, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
+import { STATUS_CLASSES } from '../data/statusClasses';
+import { Search } from 'lucide-react';
 
 interface TrackProblemProps {
   problems: Problem[];

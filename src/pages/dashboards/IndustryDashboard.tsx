@@ -1,7 +1,6 @@
 import React from 'react';
 import { Idea } from '../../types';
 import { IdeaCard } from '../../components/IdeaCard';
-import { Factory, Award, TrendingUp } from 'lucide-react';
 
 interface IndustryDashboardProps {
   ideas: Idea[];

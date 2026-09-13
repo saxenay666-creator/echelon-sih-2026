@@ -1,7 +1,7 @@
 import React from 'react';
 import { Problem } from '../../types';
 import { ProblemCard } from '../../components/ProblemCard';
-import { Plus, CheckCircle, Bell } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 interface CitizenProfileProps {
   problems: Problem[];

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Problem, ProblemStatus } from '../../types';
 import { CATEGORIES } from '../../data/mockData';
-import { Shield, Users, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 interface AdminDashboardProps {
   problems: Problem[];
@@ -19,6 +19,18 @@ const ALL_STATUSES: ProblemStatus[] = [
   'Implemented',
   'Solved'
 ];
+
+const DEFAULT_STATUS_COUNTS: Record<ProblemStatus, number> = {
+  New: 12,
+  'AI Analyzed': 10,
+  'Open for Solutions': 16,
+  'Solution Selected': 8,
+  Prototype: 7,
+  'Government Review': 5,
+  Pilot: 9,
+  Implemented: 13,
+  Solved: 18
+};
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({ problems, showToast }) => {
   const [modCounts, setModCounts] = useState({
@@ -39,7 +51,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ problems, showTo
   };
 
   const statusCounts = ALL_STATUSES.map((status) => {
-    const count = problems.filter((p) => p.status === status).length || Math.floor(Math.random() * 20) + 4;
+    const count = problems.filter((p) => p.status === status).length || DEFAULT_STATUS_COUNTS[status];
     return { status, count };
   });
 

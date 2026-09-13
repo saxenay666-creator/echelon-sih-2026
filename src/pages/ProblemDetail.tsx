@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Problem, Idea } from '../types';
-import { STATUS_CLASSES } from '../components/ProblemCard';
-import { ArrowLeft, Bot, ThumbsUp, Camera, Video, FileText, Share2, ShieldAlert } from 'lucide-react';
+import { STATUS_CLASSES } from '../data/statusClasses';
+import { ArrowLeft, Bot, ThumbsUp, Camera, Video, FileText, Share2 } from 'lucide-react';
 
 interface ProblemDetailProps {
   problemId: string;
