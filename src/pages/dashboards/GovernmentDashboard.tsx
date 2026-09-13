@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Problem } from '../../types';
-import { Check, AlertTriangle, X, FileCheck, Building } from 'lucide-react';
+import { Check, AlertTriangle, X, FileCheck } from 'lucide-react';
 
 interface GovernmentDashboardProps {
   problems: Problem[];

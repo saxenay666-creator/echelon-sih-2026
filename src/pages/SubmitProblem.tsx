@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Problem, Severity } from '../types';
 import { DISTRICTS, CATEGORIES } from '../data/mockData';
-import { Check, ArrowRight, ArrowLeft, Copy, MapPin, Upload, Camera, Video, Mic, FileText, Bot } from 'lucide-react';
+import { Check, ArrowRight, ArrowLeft, Copy, MapPin, Camera, Video, Mic, FileText, Bot } from 'lucide-react';
 
 interface SubmitProblemProps {
   onProblemSubmitted: (newProblem: Problem) => void;

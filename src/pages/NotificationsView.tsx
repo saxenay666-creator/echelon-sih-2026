@@ -8,7 +8,7 @@ interface NotificationsViewProps {
   showToast: (msg: string) => void;
 }
 
-export const NotificationsView: React.FC<NotificationsViewProps> = ({ navigate, showToast }) => {
+export const NotificationsView: React.FC<NotificationsViewProps> = ({ showToast }) => {
   const [items, setItems] = useState<NotificationItem[]>(NOTIFICATIONS);
   const [activeFilter, setActiveFilter] = useState<'all' | 'problem' | 'solution' | 'evaluation'>('all');
 

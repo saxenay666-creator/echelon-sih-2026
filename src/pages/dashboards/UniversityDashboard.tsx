@@ -2,7 +2,6 @@ import React from 'react';
 import { Problem } from '../../types';
 import { ProblemCard } from '../../components/ProblemCard';
 import { LB_STUDENTS } from '../../data/mockData';
-import { Building2, Users, Award } from 'lucide-react';
 
 interface UniversityDashboardProps {
   problems: Problem[];

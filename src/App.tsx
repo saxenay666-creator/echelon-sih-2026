@@ -30,11 +30,23 @@ import { IndustryDashboard } from './pages/dashboards/IndustryDashboard';
 import { GovernmentDashboard } from './pages/dashboards/GovernmentDashboard';
 import { AdminDashboard } from './pages/dashboards/AdminDashboard';
 
+function getRouteFromHash() {
+  const hash = window.location.hash || '#/home';
+  const cleanHash = hash.replace(/^#\/?/, '').split('?')[0];
+  const parts = cleanHash.split('/');
+
+  return {
+    route: parts[0] || 'home',
+    param: parts[1] || ''
+  };
+}
+
 export function App() {
   const [problems, setProblems] = useState<Problem[]>(() => getStoredProblems());
   const [ideas] = useState<Idea[]>(INITIAL_IDEAS);
-  const [currentRoute, setCurrentRoute] = useState<string>('home');
-  const [routeParam, setRouteParam] = useState<string>('');
+  const initialRoute = getRouteFromHash();
+  const [currentRoute, setCurrentRoute] = useState<string>(initialRoute.route);
+  const [routeParam, setRouteParam] = useState<string>(initialRoute.param);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -45,11 +57,7 @@ export function App() {
   };
 
   const handleHashChange = () => {
-    const hash = window.location.hash || '#/home';
-    const cleanHash = hash.replace(/^#\/?/, '').split('?')[0];
-    const parts = cleanHash.split('/');
-    const route = parts[0] || 'home';
-    const param = parts[1] || '';
+    const { route, param } = getRouteFromHash();
 
     setCurrentRoute(route);
     setRouteParam(param);
@@ -57,7 +65,6 @@ export function App() {
   };
 
   useEffect(() => {
-    handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);

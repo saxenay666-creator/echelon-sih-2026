@@ -1,7 +1,7 @@
 import React from 'react';
 import { Problem, Idea } from '../../types';
 import { IdeaCard } from '../../components/IdeaCard';
-import { Sparkles, Trophy, Award, ArrowRight } from 'lucide-react';
+import { Sparkles, Trophy } from 'lucide-react';
 
 interface StudentDashboardProps {
   problems: Problem[];
